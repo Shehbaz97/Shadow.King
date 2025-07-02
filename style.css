@@ -1,12 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 body {
-  background: #111;
-  color: #0f0;
-  font-family: monospace;
+  background: #0f0f0f url('https://www.transparenttextures.com/patterns/black-linen.png');
+  color: #00ff99;
+  font-family: 'Share Tech Mono', monospace;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 30px;
+}
+
+.terminal {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .sultan-logo {
@@ -28,43 +38,9 @@ body {
   transition: opacity 0.2s, transform 1s;
 }
 
-.projects {
-  margin-top: 20px;
-  color: #fff;
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-.projects.show {
-  opacity: 1;
-}
-
-.hidden {
-  display: none;
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
-body.hacker-bg {
-  background-color: #0f0f0f;
-  background-image: url('https://www.transparenttextures.com/patterns/black-linen.png');
-  color: #00ff99;
-  font-family: 'Share Tech Mono', monospace;
-  margin: 0;
-  padding: 30px;
-}
-
-.terminal {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 .glitch {
   position: relative;
-  font-size: 2.8rem;
   font-weight: bold;
-  color: #00ff99;
-  text-align: center;
 }
 .glitch::before,
 .glitch::after {
@@ -87,11 +63,15 @@ body.hacker-bg {
   animation: glitch 1.2s infinite linear alternate-reverse;
 }
 @keyframes glitch {
-  0% { clip: rect(24px, 9999px, 30px, 0); transform: skew(0.3deg); }
-  20% { clip: rect(30px, 9999px, 45px, 0); transform: skew(0.4deg); }
-  40% { clip: rect(56px, 9999px, 65px, 0); transform: skew(0.2deg); }
-  60% { clip: rect(70px, 9999px, 80px, 0); transform: skew(0.3deg); }
-  100% { clip: rect(85px, 9999px, 90px, 0); transform: skew(0.1deg); }
+  0% { clip: rect(0, 9999px, 5px, 0); }
+  20% { clip: rect(5px, 9999px, 10px, 0); }
+  40% { clip: rect(10px, 9999px, 15px, 0); }
+  60% { clip: rect(15px, 9999px, 20px, 0); }
+  100% { clip: rect(20px, 9999px, 25px, 0); }
+}
+
+.terminal-block {
+  margin: 40px 0;
 }
 
 .typewriter {
@@ -113,60 +93,6 @@ body.hacker-bg {
   50% { border-color: #00ff99; }
 }
 
-.terminal-block {
-  margin: 40px 0;
-}
-
-.terminal-block ul {
-  list-style-type: square;
-  margin-left: 20px;
-}
-
-.resume-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  background-color: #00ff99;
-  color: black;
-  text-decoration: none;
-  border-radius: 5px;
-}
-.green-neon-button {
-  display: inline-block;
-  padding: 12px 24px;
-  color: #00ff00;
-  border: 2px solid #00ff00;
-  border-radius: 5px;
-  text-decoration: none;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 16px;
-  background-color: transparent;
-  box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
-  position: relative;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-}
-
-.green-neon-button:hover {
-  background-color: #00ff00;
-  color: #000;
-  box-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
-  transform: scale(1.05);
-}
-
-/* Silent King's Glitch Effect */
-.green-neon-button::before,
-.green-neon-button::after {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  right: 0;
-  color: #00ff00;
-  background: transparent;
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-}
-
 .green-neon-button {
   display: inline-block;
   padding: 12px 24px;
@@ -180,7 +106,6 @@ body.hacker-bg {
   box-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00;
   transition: all 0.3s ease-in-out;
 }
-
 .green-neon-button:hover {
   background-color: #00ff00;
   color: #000;
@@ -188,3 +113,14 @@ body.hacker-bg {
   transform: scale(1.05);
 }
 
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
